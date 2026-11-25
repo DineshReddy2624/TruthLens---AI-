@@ -1,0 +1,26 @@
+{
+  "description": "Label mapping from benchmark datasets (FEVER and SciFact) to TruthLens AI 5 canonical labels",
+  "canonical_labels": [
+    "Supported",
+    "Contradicted",
+    "Partially Supported",
+    "Insufficient Evidence",
+    "Conflicting Evidence"
+  ],
+  "fever_mapping": {
+    "SUPPORTS": "Supported",
+    "REFUTES": "Contradicted",
+    "NOT ENOUGH INFO": "Insufficient Evidence"
+  },
+  "scifact_mapping": {
+    "SUPPORT": "Supported",
+    "CONTRADICT": "Contradicted",
+    "NEI": "Insufficient Evidence",
+    "PARTIAL": "Partially Supported",
+    "CONFLICT": "Conflicting Evidence"
+  },
+  "rules": {
+    "no_unmapped_merge": "FEVER has 3 classes and SciFact has 3-5 classes. Neither dataset may be merged without this explicit mapping.",
+    "ambiguity_handling": "Claims where retrieved evidence has conflicting high-credibility sources map to 'Conflicting Evidence'. Claims missing key numerical or temporal qualifiers map to 'Partially Supported'."
+  }
+}
